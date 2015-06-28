@@ -1,0 +1,32 @@
+export TERM="xterm-256color"
+export PAGER="less"
+export LESS="--ignore-case --raw-control-chars"
+
+HISTSIZE=3000
+SAVEHIST=3000
+HISTFILE=~/.zsh_history
+
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt INTERACTIVE_COMMENTS
+unsetopt BEEP
+
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+
+setopt COMPLETE_IN_WORD
+setopt ALWAYS_TO_END
+
+unsetopt MENU_COMPLETE
+setopt AUTO_MENU
+
+setopt PROMPT_SUBST
+
+source ~/.zsh/aliases.zsh
+source ~/.zsh/colors.zsh
+source ~/.zsh/prompt.zsh
+source ~/.zsh/keys.zsh
+source ~/.zsh/completion.zsh
+source ~/.zsh/manpages.zsh
+source ~/.zsh/imports.zsh
