@@ -15,4 +15,8 @@ else
     export LSCOLORS=$LSCOLORS
 fi
 
+if [ -x ~/.vim/bundle/gruvbox/gruvbox_256palette.sh ]; then
+    source ~/.vim/bundle/gruvbox/gruvbox_256palette.sh
+fi
+
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
