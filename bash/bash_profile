@@ -1,0 +1,59 @@
+[[ -r ~/.bashrc ]] && source ~/.bashrc
+
+LANG=en_US.UTF-8
+
+# ----------- Aliases -----------
+alias g='git'
+alias v='vim'
+alias ll='ls -al'
+
+# ----------- General -----------
+
+# Update window size after every command
+shopt -s checkwinsize
+
+# Prevent file overwrite on stdout redirection
+# Use `>|` to force redirection to an existing file
+set -o noclobber
+
+# Turn on recursive globbing (enables ** to recurse all directories)
+shopt -s globstar 2> /dev/null
+
+# ----------- Completion -----------
+
+# Perform file completion in a case insensitive fashion
+bind "set completion-ignore-case on"
+
+# Display matches for ambiguous patterns at first tab press
+bind "set show-all-if-ambiguous on"
+
+source ~/.git-completion.bash
+
+# ----------- History -----------
+
+# Append to the history file, don't overwrite it
+shopt -s histappend
+
+# Save multi-line commands as one command
+shopt -s cmdhist
+
+HISTSIZE=500000
+HISTFILESIZE=100000
+HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+HISTTIMEFORMAT='%F %T '
+
+# Enable incremental history search with up/down arrows (also Readline goodness)
+# Learn more about this here: http://codeinthehole.com/writing/the-most-important-command-line-tip-incremental-history-searching-with-inputrc/
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\e[C": forward-char'
+bind '"\e[D": backward-char'
+
+# ----------- Directories -----------
+
+# Prepend cd to directory names automatically
+shopt -s autocd 2> /dev/null
+# Correct spelling errors during tab-completion
+shopt -s dirspell 2> /dev/null
+# Correct spelling errors in arguments supplied to cd
+shopt -s cdspell 2> /dev/null
