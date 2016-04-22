@@ -4,10 +4,17 @@ alias v='vim'
 alias ll='ls -al'
 
 # ------------ Prompt -------------
-if [ $(id -u) -eq 0 ]; then # root
-    PS1="\e[01;31m\h\e[01;34m \w \$\e[00m "
+BOLD=$(tput bold)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+BLUE=$(tput setaf 4)
+RESET=$(tput sgr0)
+
+if [ $(id -u) -eq 0 ]; then
+    # root prompt in red
+    PS1="\[$BOLD\]\[$RED\]\h\[$BLUE\] \w\[$RESET\] \$ "
 else
-    PS1="\e[01;32m\u@\h\e[01;34m \w \$\e[00m "
+    PS1="\[$BOLD\]\[$GREEN\]\u@\h\[$BLUE\] \w\[$RESET\] \$ "
 fi
 
 # ------------ Colors -------------
