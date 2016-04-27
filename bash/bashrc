@@ -7,14 +7,13 @@ alias ll='ls -al'
 BOLD=$(tput bold)
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
-BLUE=$(tput setaf 4)
+BLUE=$(tput setaf 6)
 RESET=$(tput sgr0)
 
-if [ $(id -u) -eq 0 ]; then
-    # root prompt in red
-    PS1="\[$BOLD\]\[$RED\]\h\[$BLUE\] \w\[$RESET\] \$ "
+if [[ $(id -u) -eq 0 || -n "$SSH_CONNECTION" ]]; then
+    PS1="\[$BOLD\]\[$RED\]\u@\h\[$GREEN\] \w \[$RED\]❯\[$RESET\] "
 else
-    PS1="\[$BOLD\]\[$GREEN\]\u@\h\[$BLUE\] \w\[$RESET\] \$ "
+    PS1="\[$BLUE\]\u\[$BOLD\]\[$GREEN\] \w \[$RED\]❯\[$RESET\] "
 fi
 
 # ------------ Colors -------------
