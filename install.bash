@@ -42,6 +42,7 @@ link_prompt $DIR/vim $HOME/.vim
 # bash
 link_prompt $DIR/bash/bashrc $HOME/.bashrc
 link_prompt $DIR/bash/bash_profile $HOME/.bash_profile
+link_prompt $DIR/bash/inputrc $HOME/.inputrc
 link_prompt $DIR/bash/git-completion.bash $HOME/.git-completion.bash
 
 # windows
