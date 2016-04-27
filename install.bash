@@ -18,12 +18,13 @@ link_prompt() {
         read -r -p "replace ‘$2’? "
         if [[ ${REPLY,,} =~ ^y(es)?$ ]]; then
             rm -rf $2
-            REPLACED="$REPLACED\n$2"
             ln -s $1 $2
+            REPLACED="$REPLACED\n$2"
         else
             SKIPPED="$SKIPPED\n$2"
         fi
     else
+        ln -s $1 $2
         NEW="$NEW\n$2"
     fi
 }
