@@ -3,6 +3,11 @@ alias g='git'
 alias v='vim'
 alias ll='ls -al'
 
+# --------- Window Title ----------
+if [[ "$TERM" == xterm* ]]; then
+    export PROMPT_COMMAND='echo -ne "\033]0;${PWD/$HOME/\~}\007"'
+fi
+
 # ------------ Prompt -------------
 BOLD=$(tput bold)
 RED=$(tput setaf 1)
@@ -72,9 +77,6 @@ HISTSIZE=500000
 HISTFILESIZE=100000
 HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 HISTTIMEFORMAT='%F %T '
-
-# Store history immediately
-PROMPT_COMMAND='history -a'
 
 # Enable incremental history search with up/down arrows (also Readline goodness)
 # Learn more about this here: http://codeinthehole.com/writing/the-most-important-command-line-tip-incremental-history-searching-with-inputrc/
