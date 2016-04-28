@@ -47,7 +47,7 @@ link_prompt $DIR/bash/inputrc $HOME/.inputrc
 link_prompt $DIR/bash/git-completion.bash $HOME/.git-completion.bash
 
 # windows
-if [ "$(uname)" == "MINGW32_NT" ]; then
+if [[ "$(uname)" == MINGW* ]]; then
     link_prompt $DIR/mintty/minttyrc $HOME/.minttyrc
 fi
 
