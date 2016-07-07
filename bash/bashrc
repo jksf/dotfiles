@@ -15,11 +15,14 @@ fi
 BOLD=$(tput bold)
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
-BLUE=$(tput setaf 6)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
 RESET=$(tput sgr0)
 
-if [[ $(id -u) -eq 0 || -n "$SSH_CONNECTION" ]]; then
+if [[ $(id -u) -eq 0 ]]; then
     PS1="\[$BOLD\]\[$RED\]\u@\h\[$GREEN\] \w \[$RED\]❯\[$RESET\] "
+elif [[ -n "$SSH_CONNECTION" ]]; then
+    PS1="\[$BOLD\]\[$YELLOW\]\u@\h\[$GREEN\] \w \[$RED\]❯\[$RESET\] "
 else
     PS1="\[$BLUE\]\u\[$BOLD\]\[$GREEN\] \w \[$RED\]❯\[$RESET\] "
 fi
