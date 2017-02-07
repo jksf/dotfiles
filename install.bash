@@ -32,9 +32,6 @@ link_prompt() {
 # git
 link_prompt $DIR/git/gitconfig $HOME/.gitconfig
 
-# tmux
-link_prompt $DIR/tmux/tmux.conf $HOME/.tmux.conf
-
 # vim
 link_prompt $DIR/vim/vimrc $HOME/.vimrc
 link_prompt $DIR/vim/gvimrc $HOME/.gvimrc
