@@ -27,3 +27,6 @@ BoldWhite=235,219,178
 Term=xterm-256color
 Columns=120
 Rows=35
+ClicksPlaceCursor=yes
+Scrollbar=none
+BellType=0
