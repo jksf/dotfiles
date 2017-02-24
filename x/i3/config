@@ -26,6 +26,10 @@ bindsym Control+$mod+l exec i3lock --dpms \
                                    --show-failed-attempts \
                                    --color "000000"
 
+# screenshot
+bindsym Print exec mkdir -p ~/Screenshots && import -window root \
+                                                    ~/Screenshots/screen-$(date +%FT%T.%N).jpg
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
