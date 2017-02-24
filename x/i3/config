@@ -20,6 +20,9 @@ bindsym $mod+Return exec urxvt
 # start alsamixer
 bindsym $mod+a exec "urxvt -e alsamixer"
 
+# start file explorer
+bindsym $mod+z exec "urxvt -e ranger"
+
 # lock
 bindsym Control+$mod+l exec i3lock --dpms \
                                    --ignore-empty-password \
