@@ -43,6 +43,10 @@ link_prompt $DIR/bash/bash_profile $HOME/.bash_profile
 link_prompt $DIR/bash/inputrc $HOME/.inputrc
 link_prompt $DIR/bash/git-completion.bash $HOME/.git-completion.bash
 
+# i3
+mkdir -p $HOME/.config/i3
+link_prompt $DIR/i3/config $HOME/.config/i3/config
+
 # windows
 if [[ "$(uname)" == MINGW* ]]; then
     link_prompt $DIR/mintty/minttyrc $HOME/.minttyrc
