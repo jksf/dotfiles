@@ -1,6 +1,7 @@
 URxvt*termName: rxvt
 URxvt*scrollBar: false
 URxvt*font: xft:DejaVu Sans Mono:size=10
+URxvt*letterSpace: -1
 URxvt*borderless: 1
 URxvt*saveLines: 50000
 
