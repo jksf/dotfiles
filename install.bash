@@ -54,6 +54,7 @@ else
     # i3
     mkdir -p $HOME/.config/i3
     link_prompt $DIR/x/i3/config $HOME/.config/i3/config
+    link_prompt $DIR/x/i3/i3status.conf $HOME/.config/i3/i3status.conf
 fi
 
 if [ -n "$NEW" ]; then
