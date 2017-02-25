@@ -1,9 +1,15 @@
+Xft*dpi: 96
+Xft*antialias: true
+
 URxvt*termName: rxvt
 URxvt*scrollBar: false
 URxvt*font: xft:DejaVu Sans Mono:size=10
 URxvt*letterSpace: -1
 URxvt*borderless: 1
 URxvt*saveLines: 50000
+
+URxvt*transparent: true
+URxvt*shading: 40
 
 *background: #282828
 *foreground: #ebdbb2
