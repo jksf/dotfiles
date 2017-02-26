@@ -160,3 +160,5 @@ bar {
     }
 }
 
+# Start notification daemon
+exec --no-startup-id "dunst"
