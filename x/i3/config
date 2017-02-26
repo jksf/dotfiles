@@ -24,8 +24,7 @@ bindsym $mod+a exec "urxvt -e alsamixer"
 bindsym $mod+z exec "urxvt -e ranger"
 
 # lock
-bindsym Control+$mod+l exec i3lock --dpms \
-                                   --ignore-empty-password \
+bindsym Control+$mod+l exec i3lock --ignore-empty-password \
                                    --show-failed-attempts \
                                    --color "000000"
 
