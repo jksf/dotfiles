@@ -127,8 +127,8 @@ bindsym XF86AudioMute exec "amixer set Master toggle"
 bindsym XF86AudioMicMute exec "amixer sset Capture toggle"
 
 # Backlight buttons
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 2"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 2"
 
 # Borders
 hide_edge_borders both
