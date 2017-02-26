@@ -55,6 +55,10 @@ else
     mkdir -p $HOME/.config/i3
     link_prompt $DIR/x/i3/config $HOME/.config/i3/config
     link_prompt $DIR/x/i3/i3status.conf $HOME/.config/i3/i3status.conf
+
+    # dunst
+    mkdir -p $HOME/.config/dunst
+    link_prompt $DIR/x/dunst/dunstrc $HOME/.config/dunst/dunstrc
 fi
 
 if [ -n "$NEW" ]; then
