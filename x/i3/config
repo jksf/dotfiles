@@ -153,7 +153,7 @@ bar {
         separator  #928374
 
         # Type             border      background  font
-        focused_workspace  #79740e     #79740e     #282828
+        focused_workspace  #83a598     #83a598     #282828
         active_workspace   #1d2021     #1d2021     #928374
         inactive_workspace #32302f     #32302f     #928374
         urgent_workspace   #cc241d     #cc241d     #ebdbb2
