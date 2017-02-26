@@ -136,26 +136,26 @@ for_window [class="URxvt"] border pixel 1
 for_window [class="Gvim"] border pixel 1
 
 # Layout colors          border      background  text        indicator
-client.focused           #504945     #504945     #ebdbb2     #282828
-client.focused_inactive  #1d2021     #1d2021     #928374     #282828
-client.unfocused         #32302f     #32302f     #928374     #282828
-client.urgent            #cc241d     #cc241d     #ebdbb2     #282828
+client.focused           #504945     #504945     #ebdbb2     #000000
+client.focused_inactive  #1d2021     #1d2021     #928374     #000000
+client.unfocused         #000000     #000000     #928374     #000000
+client.urgent            #cc241d     #cc241d     #ebdbb2     #000000
 
-client.background       #282828
+client.background        #000000
 
 # Start i3bar to display a workspace bar
 bar {
     status_command i3status -c ~/.config/i3/i3status.conf
     tray_output primary
     colors {
-        background #282828
+        background #00000
         statusline #ebdbb2
         separator  #928374
 
         # Type             border      background  font
-        focused_workspace  #83a598     #83a598     #282828
+        focused_workspace  #928374     #928374     #000000
         active_workspace   #1d2021     #1d2021     #928374
-        inactive_workspace #32302f     #32302f     #928374
+        inactive_workspace #000000     #000000     #928374
         urgent_workspace   #cc241d     #cc241d     #ebdbb2
     }
 }

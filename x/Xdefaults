@@ -11,7 +11,7 @@ URxvt*saveLines: 50000
 URxvt*transparent: true
 URxvt*shading: 40
 
-*background: #282828
+*background: #000000
 *foreground: #ebdbb2
 
 ! Black + DarkGrey
