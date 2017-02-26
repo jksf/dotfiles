@@ -38,16 +38,16 @@
     history = mod4+grave
 
 [urgency_low]
-    background = "#79740E"
+    background = "#167FD2"
     foreground = "#FFFFFF"
     timeout = 10
 
 [urgency_normal]
-    background = "#79740E"
+    background = "#167FD2"
     foreground = "#FFFFFF"
     timeout = 20
 
 [urgency_critical]
-    background = "#801515"
+    background = "#D2450F"
     foreground = "#FFFFFF"
     timeout = 0
