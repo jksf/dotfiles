@@ -9,7 +9,7 @@ URxvt*borderless: 1
 URxvt*saveLines: 50000
 
 URxvt*transparent: true
-URxvt*shading: 40
+URxvt*shading: 15
 
 *background: #000000
 *foreground: #ebdbb2
