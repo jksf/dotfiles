@@ -161,7 +161,7 @@ bar {
 }
 
 # Setup wallpaper
-exec --no-startup-id "feh --bg-fill ~/Images/wallpaper.png"
+exec --no-startup-id "[ -f ~/.fehbg ] && sh ~/.fehbg"
 
 # Start notification daemon
 exec --no-startup-id "dunst"
