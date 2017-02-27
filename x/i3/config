@@ -29,14 +29,14 @@ bindsym Control+$mod+l exec i3lock --ignore-empty-password \
                                    --color "000000"
 
 # screenshot
-bindsym Print exec mkdir -p ~/Screenshots && import -window root \
-                                                    ~/Screenshots/screen-$(date +%FT%T.%N).jpg
+bindsym Print exec --no-startup-id mkdir -p ~/Screenshots && import -window root \
+                                   ~/Screenshots/screen-$(date +%FT%T.%N).jpg
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run
 
 # change focus
 bindsym $mod+h focus left
@@ -121,14 +121,14 @@ bindsym $mod+r mode "resize"
 bindsym XF86Display exec "arandr"
 
 # Audio buttons
-bindsym XF86AudioRaiseVolume exec "amixer sset Master '1%+'"
-bindsym XF86AudioLowerVolume exec "amixer sset Master '1%-'"
-bindsym XF86AudioMute exec "amixer set Master toggle"
-bindsym XF86AudioMicMute exec "amixer sset Capture toggle"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer sset Master '1%+'"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer sset Master '1%-'"
+bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle"
+bindsym XF86AudioMicMute exec --no-startup-id "amixer sset Capture toggle"
 
 # Backlight buttons
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 2"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 2"
+bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 2"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 2"
 
 # Borders
 hide_edge_borders both
