@@ -1,0 +1,3 @@
+* show volume in i3 status
+* i3 shortcuts for power management (shutdown, suspend)
+* systemctl suspend + lock
