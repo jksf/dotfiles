@@ -165,6 +165,3 @@ exec --no-startup-id "[ -f ~/.fehbg ] && sh ~/.fehbg"
 
 # Start notification daemon
 exec --no-startup-id "dunst"
-
-# Start network manager applet
-exec --no-startup-id "nm-applet"
