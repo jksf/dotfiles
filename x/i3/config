@@ -134,14 +134,14 @@ bindsym $mod+Pause mode "$mode_system"
 bindsym XF86Display exec "arandr"
 
 # Audio buttons
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer sset Master '1%+'"
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer sset Master '1%-'"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer sset Master '5%+'"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer sset Master '5%-'"
 bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle"
 bindsym XF86AudioMicMute exec --no-startup-id "amixer sset Capture toggle"
 
 # Backlight buttons
-bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 2"
-bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 2"
+bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 5"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 5"
 
 # Borders
 hide_edge_borders both
