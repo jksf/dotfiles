@@ -51,6 +51,14 @@ else
     # X
     link_prompt $DIR/x/Xdefaults $HOME/.Xdefaults
 
+    # X Scripts
+    mkdir -p $HOME/bin
+    link_prompt $DIR/x/scripts/pixlock $HOME/bin/pixlock
+
+    # Images
+    mkdir -p $HOME/Images
+    link_prompt $DIR/x/images/lock.png $HOME/Images/lock.png
+
     # i3
     mkdir -p $HOME/.config/i3
     link_prompt $DIR/x/i3/config $HOME/.config/i3/config

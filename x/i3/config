@@ -24,7 +24,7 @@ bindsym $mod+a exec "urxvt -e alsamixer"
 bindsym $mod+z exec "urxvt -e ranger"
 
 # lock
-bindsym Control+$mod+l exec i3lock -efc '000000'
+bindsym Control+$mod+l exec pixlock ~/Images/lock.png
 
 # screenshot
 bindsym Print exec --no-startup-id mkdir -p ~/Screenshots && import -window root \
@@ -119,7 +119,7 @@ set $mode_system System (e) logout, (s) suspend, (r) reboot, (h) shutdown
 
 mode "$mode_system" {
     bindsym e exec --no-startup-id "i3-msg exit", mode "default"
-    bindsym s exec --no-startup-id "i3lock -efc '000000' && systemctl suspend", mode "default"
+    bindsym s exec --no-startup-id "pixlock ~/Images/lock.png && systemctl suspend", mode "default"
     bindsym r exec --no-startup-id "reboot", mode "default"
     bindsym h exec --no-startup-id "shutdown -h now", mode "default"
 
