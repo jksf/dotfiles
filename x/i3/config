@@ -149,8 +149,10 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 5"
 
 # Borders
 hide_edge_borders both
-for_window [class="URxvt"] border pixel 1
-for_window [class="Gvim"] border pixel 1
+
+# Disable title bar
+for_window [class="^.*"] border pixel 1
+
 
 # Layout colors          border      background  text        indicator
 client.focused           #504945     #504945     #ebdbb2     #000000
