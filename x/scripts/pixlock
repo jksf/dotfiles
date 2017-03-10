@@ -1,23 +1,36 @@
 #!/bin/bash
 
-TEXT="Locked"
-FILE=/tmp/lockscreen.png
+LOCK_IMAGE=~/Images/lock.png
+OUTPUT_IMAGE=/tmp/lockscreen.png
 
-scrot --multidisp "$FILE"
+[[ $(identify "$LOCK_IMAGE") =~ ([0-9]+)x([0-9]+) ]]
+LOCK_IMAGE_WIDTH=${BASH_REMATCH[1]}
+LOCK_IMAGE_HEIGHT=${BASH_REMATCH[2]}
 
-convert "$FILE" \
-    -quality 50% \
-    -scale 10% \
-    -scale 1000% \
-    -fill black \
-    -colorize 50% \
-    "$FILE"
+CONV_PARAMS="-quality 50%
+             -scale 10%
+             -scale 1000%
+             -fill black
+             -colorize 50%"
 
-if [[ -f $1 ]]; then
-    convert "$FILE" \
-        "$1" -gravity center -composite -matte \
-        "$FILE"
-fi
+while read LINE
+do
+  if [[ "$LINE" =~ ([0-9]+)x([0-9]+)\+([0-9]+)\+([0-9]+) ]]; then
+    WIDTH=${BASH_REMATCH[1]}
+    HEIGHT=${BASH_REMATCH[2]}
+    X=${BASH_REMATCH[3]}
+    Y=${BASH_REMATCH[4]}
+    POS_X=$(($X+$WIDTH/2-$LOCK_IMAGE_WIDTH/2))
+    POS_Y=$(($Y+$HEIGHT/2-$LOCK_IMAGE_HEIGHT/2))
 
-i3lock -eui "$FILE"
-rm "$FILE"
+    CONV_PARAMS="$CONV_PARAMS '$LOCK_IMAGE' -geometry '+$POS_X+$POS_Y' -composite"
+  fi
+done <<<"`xrandr -q`"
+
+CONV="convert xwd:- $CONV_PARAMS '$OUTPUT_IMAGE'"
+
+xwd -root | eval $CONV
+
+i3lock -ei "$OUTPUT_IMAGE"
+
+rm "$OUTPUT_IMAGE"
