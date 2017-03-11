@@ -135,9 +135,8 @@ bindsym $mod+Shift+x mode "$mode_system"
 # Monitors
 bindsym XF86Display exec "arandr"
 
-# Toggle primary monitor (usually LVDS on laptop)
-bindsym $mod+m exec "PRIMARY=$(xrandr --query | grep 'connected primary' | awk '{print $1}') && xrandr --output $PRIMARY --auto"
-bindsym $mod+Shift+m exec "PRIMARY=$(xrandr --query | grep 'connected primary' | awk '{print $1}') && xrandr --output $PRIMARY --off"
+# Set default monitor layout
+bindsym $mod+m exec --no-startup-id "monitorlayout"
 
 # Audio buttons
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer sset Master '5%+'"

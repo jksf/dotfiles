@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# This script turns on all connected monitors (except LVDS if lid is closed).
+# Their positioning is determined by 'xrandr -q' order.
+# First connected monitor is the left-most and so on.
+
+cmd='xrandr'
+curr_monitor=''
+
+function turn_on {
+    cmd="$cmd --output $1 --auto"
+    if [ ! -z "$curr_monitor" ]; then
+        cmd="$cmd --right-of $curr_monitor"
+    fi
+    curr_monitor="$1"
+}
+
+function turn_off {
+    cmd="$cmd --output $1 --off"
+}
+
+function check_lid_open {
+    for file in /proc/acpi/button/lid/*/state; do
+        state=$(cat $file)
+        if [[ $state =~ open ]]; then
+            return 0
+        fi
+    done
+
+    return 1
+}
+
+while read line
+do
+    connected_match='([a-zA-Z0-9]+)\s+connected'
+    if [[ "$line" =~ $connected_match ]]; then
+        monitor=${BASH_REMATCH[1]}
+        laptop_match='LVDS[0-9]*'
+        if [[ "$monitor" =~ $laptop_match ]]; then
+            if check_lid_open; then
+                turn_on $monitor
+            else
+                turn_off $monitor
+            fi
+        else
+            turn_on $monitor
+        fi
+    fi
+
+    disconnected_match='([a-zA-Z0-9]+)\s+disconnected'
+    if [[ "$line" =~ $disconnected_match ]]; then
+        monitor=${BASH_REMATCH[1]}
+        turn_off $monitor
+    fi
+done <<<"`xrandr -q`"
+
+eval $cmd

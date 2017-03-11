@@ -54,6 +54,7 @@ else
     # X Scripts
     mkdir -p $HOME/bin
     link_prompt $DIR/x/scripts/pixlock $HOME/bin/pixlock
+    link_prompt $DIR/x/scripts/monitorlayout $HOME/bin/monitorlayout
 
     # Images
     mkdir -p $HOME/Images
