@@ -21,7 +21,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+a exec "urxvt -e alsamixer"
 
 # start file explorer
-bindsym $mod+z exec "urxvt -e ranger"
+bindsym $mod+z exec "pcmanfm"
 
 # lock
 bindsym Control+$mod+l exec pixlock ~/Images/lock.png
@@ -31,10 +31,12 @@ bindsym Print exec --no-startup-id mkdir -p ~/Screenshots && import -window root
                                    ~/Screenshots/screen-$(date +%FT%T.%N).jpg
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+# start program launcher
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run
+bindsym $mod+w exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+h focus left
@@ -59,7 +61,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -128,7 +130,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+q mode "$mode_system"
+bindsym $mod+Shift+x mode "$mode_system"
 
 # Monitors
 bindsym XF86Display exec "arandr"
