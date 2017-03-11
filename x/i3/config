@@ -180,6 +180,9 @@ bar {
     }
 }
 
+# Load X resources
+exec --no-startup-id xrdb -merge ~/.Xdefaults
+
 # Setup monitor layout and wallpaper
 exec --no-startup-id "monitorlayout && [ -f ~/.fehbg ] && sh ~/.fehbg"
 
