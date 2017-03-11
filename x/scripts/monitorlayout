@@ -11,6 +11,8 @@ function turn_on {
     cmd="$cmd --output $1 --auto"
     if [ ! -z "$curr_monitor" ]; then
         cmd="$cmd --right-of $curr_monitor"
+    else # if first monitor
+        cmd="$cmd --primary"
     fi
     curr_monitor="$1"
 }
