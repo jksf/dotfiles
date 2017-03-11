@@ -136,7 +136,7 @@ bindsym $mod+Shift+x mode "$mode_system"
 bindsym XF86Display exec "arandr"
 
 # Setup default monitor layout and refresh wallpaper
-bindsym $mod+m exec --no-startup-id "monitorlayout && [ -f ~/.fehbg ] && sh ~/.fehbg"
+bindsym $mod+m exec --no-startup-id "monitorlayout && sh ~/.fehbg"
 
 # Audio buttons
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer sset Master '5%+'"
@@ -184,7 +184,7 @@ bar {
 exec --no-startup-id xrdb -merge ~/.Xdefaults
 
 # Setup monitor layout and wallpaper
-exec --no-startup-id "monitorlayout && [ -f ~/.fehbg ] && sh ~/.fehbg"
+exec --no-startup-id "monitorlayout && sh ~/.fehbg"
 
 # Start notification daemon
 exec --no-startup-id "dunst"
