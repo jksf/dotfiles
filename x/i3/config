@@ -6,7 +6,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:DejaVu Sans Mono, FontAwesome, 9
+font pango:Droid Sans, FontAwesome, 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -154,29 +154,33 @@ hide_edge_borders both
 # Disable title bar
 for_window [class="^.*"] border pixel 1
 
+set $color-bg            #282828
+set $color-bg-active     #665c54
+set $color-bg-inactive   #282828
+set $color-bg-urgent     #e53935
+set $color-border-active #68a2ff
+set $color-text          #fdf4c1
+set $color-text-inactive #7c6f64
 
-# Layout colors          border      background  text        indicator
-client.focused           #504945     #504945     #ebdbb2     #000000
-client.focused_inactive  #1d2021     #1d2021     #928374     #000000
-client.unfocused         #000000     #000000     #928374     #000000
-client.urgent            #cc241d     #cc241d     #ebdbb2     #000000
-
-client.background        #000000
+# Layout colors         border                   background               text                 indicator
+client.focused          $color-border-active     $color-border-active     $color-text          $color-border-active
+client.unfocused        $color-bg-inactive       $color-bg-inactive       $color-text-inactive $color-bg
+client.focused_inactive $color-bg-inactive       $color-bg-inactive       $color-text-inactive $color-bg
+client.urgent           $color-bg-urgent         $color-bg-urgent         $color-text          $color-bg
 
 # Start i3bar to display a workspace bar
 bar {
     status_command i3status -c ~/.config/i3/i3status.conf
     tray_output primary
+    separator_symbol "   "
     colors {
-        background #000000
-        statusline #ebdbb2
-        separator  #928374
+        statusline $color-text
+        background $color-bg
 
-        # Type             border      background  font
-        focused_workspace  #928374     #928374     #000000
-        active_workspace   #1d2021     #1d2021     #928374
-        inactive_workspace #000000     #000000     #928374
-        urgent_workspace   #cc241d     #cc241d     #ebdbb2
+        # workspace colors border             background         text
+        focused_workspace  $color-bg-active   $color-bg-active   $color-text
+        inactive_workspace $color-bg-inactive $color-bg-inactive $color-text-inactive
+        urgent_workspace   $color-bg-urgent   $color-bg-urgent   $color-text
     }
 }
 
