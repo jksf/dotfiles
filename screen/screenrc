@@ -1,0 +1,22 @@
+# 256 colors
+term xterm-256color
+
+# Turn welcome message off
+startup_message off
+
+# Cache huge number of lines for scroll back
+defscrollback 10000
+
+# Follow mouse
+mousetrack on
+
+# Setup hardstatus
+hardstatus off
+hardstatus alwayslastline
+hardstatus string "%{b w}%H | %{-b w}%u %-Lw%{b bW}%50> %n%f %t %{-}%+Lw%<"
+
+# Hide hardstatus
+bind f eval "hardstatus ignore"
+
+# Show hardstatus
+bind F eval "hardstatus alwayslastline"

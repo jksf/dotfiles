@@ -43,11 +43,13 @@ link_prompt $DIR/bash/bash_profile $HOME/.bash_profile
 link_prompt $DIR/bash/inputrc $HOME/.inputrc
 link_prompt $DIR/bash/git-completion.bash $HOME/.git-completion.bash
 
-
 # windows
 if [[ "$(uname)" == MINGW* ]]; then
     link_prompt $DIR/mintty/minttyrc $HOME/.minttyrc
 else
+    # screen
+    link_prompt $DIR/screen/screenrc $HOME/.screenrc
+
     # X
     link_prompt $DIR/x/Xdefaults $HOME/.Xdefaults
 
