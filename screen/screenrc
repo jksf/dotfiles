@@ -13,7 +13,7 @@ mousetrack on
 # Setup hardstatus
 hardstatus off
 hardstatus alwayslastline
-hardstatus string "%{b w}%H | %{-b w}%u %-Lw%{b bW}%50> %n%f %t %{-}%+Lw%<"
+hardstatus string "%{b w} %H | %{-b w}%u %-Lw%{b bW}%50> %n%f %t %{-}%+Lw%<"
 
 # Hide hardstatus
 bind f eval "hardstatus ignore"
