@@ -155,9 +155,9 @@ hide_edge_borders both
 # Disable title bar
 for_window [class="^.*"] border pixel 1
 
-set $color-bg            #282828
-set $color-bg-active     #665c54
-set $color-bg-inactive   #282828
+set $color-bg            #111111
+set $color-bg-active     #444444
+set $color-bg-inactive   #222222
 set $color-bg-urgent     #e53935
 set $color-border-active #68a2ff
 set $color-text          #fdf4c1
