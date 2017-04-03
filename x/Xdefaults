@@ -15,6 +15,11 @@ URxvt*saveLines: 50000
 URxvt*transparent: true
 URxvt*shading: 15
 
+URxvt*perl-ext: default,matcher
+URxvt*url-launcher: firefox
+URxvt*matcher*button: 1
+
+! -------- Colors --------
 *background: #000000
 *foreground: #ebdbb2
 
