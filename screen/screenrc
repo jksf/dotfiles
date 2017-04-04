@@ -1,5 +1,5 @@
-# 256 colors
-term xterm-256color
+# Use 256 colors
+term screen-256color
 
 # Turn welcome message off
 startup_message off

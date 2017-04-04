@@ -5,7 +5,6 @@ Xft.hintstyle: hintnone
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
-URxvt*termName: rxvt
 URxvt*scrollBar: false
 URxvt*font: xft:DejaVu Sans Mono:size=10
 URxvt*letterSpace: -1
