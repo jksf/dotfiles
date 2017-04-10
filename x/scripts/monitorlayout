@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # This script turns on all connected monitors (except LVDS if lid is closed).
-# Their positioning is determined by 'xrandr -q' order.
-# First connected monitor is the left-most and so on.
+# Their positioning is counter-alphabetical from left to right.
+# For example, from left to right: LVDS, HDMI, DP.
 
 cmd='xrandr'
 curr_monitor=''
@@ -56,6 +56,6 @@ do
         monitor=${BASH_REMATCH[1]}
         turn_off $monitor
     fi
-done <<<"`xrandr -q`"
+done <<<"`xrandr -q | grep "\(dis\)\?connected" | sort -r`"
 
 eval $cmd
