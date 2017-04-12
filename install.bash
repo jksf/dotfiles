@@ -75,6 +75,10 @@ else
     # dunst
     mkdir -p $HOME/.config/dunst
     link_prompt $DIR/x/dunst/dunstrc $HOME/.config/dunst/dunstrc
+
+    # gtk
+    link_prompt $DIR/x/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
+    link_prompt $DIR/x/gtk/gtkrc-3.0 $HOME/.config/gtk-3.0/settings.ini
 fi
 
 if [ -n "$NEW" ]; then
