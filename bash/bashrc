@@ -1,5 +1,8 @@
 # ------ Check interactive --------
-[ -z "$PS1" ] && exit
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
 # ------------ Path ---------------
 export PATH="$HOME/bin:$PATH"
