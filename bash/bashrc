@@ -1,4 +1,7 @@
-# ------------ Path --------------
+# ------ Check interactive --------
+[ -z "$PS1" ] && exit
+
+# ------------ Path ---------------
 export PATH="$HOME/bin:$PATH"
 
 # ----------- Aliases -------------
