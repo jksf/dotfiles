@@ -1,0 +1,12 @@
+#!/bin/bash
+
+log=$HOME/.xlog
+path=${1#file://}
+
+echo $path
+if [ -d $path ]
+then
+    i3-sensible-terminal -e ranger $path
+else
+    i3-sensible-terminal -e ranger --selectfile=$path
+fi

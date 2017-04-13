@@ -58,6 +58,7 @@ else
     mkdir -p $HOME/bin
     link_prompt $DIR/x/scripts/pixlock $HOME/bin/pixlock
     link_prompt $DIR/x/scripts/monitorlayout $HOME/bin/monitorlayout
+    link_prompt $DIR/x/scripts/ranger-open $HOME/bin/ranger-open
 
     # Images
     mkdir -p $HOME/Images
