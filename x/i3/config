@@ -19,13 +19,13 @@ mouse_warping none
 workspace_auto_back_and_forth yes
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec i3-sensible-terminal
 
 # start alsamixer
-bindsym $mod+a exec "urxvt -e alsamixer"
+bindsym $mod+a exec "i3-sensible-terminal -e alsamixer"
 
 # start file explorer
-bindsym $mod+z exec "pcmanfm"
+bindsym $mod+z exec "i3-sensible-terminal -e ranger"
 
 # lock
 bindsym Control+$mod+l exec pixlock ~/Images/lock.png
