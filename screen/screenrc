@@ -1,22 +1,14 @@
-# Use 256 colors
 term screen-256color
-
-# Turn welcome message off
 startup_message off
-
-# Cache huge number of lines for scroll back
 defscrollback 10000
-
-# Follow mouse
 mousetrack on
+multiuser on
 
-# Setup hardstatus
+#--- setup hardstatus
 hardstatus off
-hardstatus alwayslastline
-hardstatus string "%{b w} %H | %{-b w}%u %-Lw%{b bW}%50> %n%f %t %{-}%+Lw%<"
-
-# Hide hardstatus
+hardstatus string "[%n%?: %t%?] %h"
 bind f eval "hardstatus ignore"
-
-# Show hardstatus
 bind F eval "hardstatus alwayslastline"
+
+#--- setup windowlist
+windowlist string "%3n %t   %h%=%f"
