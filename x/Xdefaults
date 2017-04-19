@@ -5,20 +5,6 @@ Xft.hintstyle: hintnone
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
-URxvt*scrollBar: false
-URxvt*font: xft:DejaVu Sans Mono:size=10
-URxvt*letterSpace: -1
-URxvt*borderless: 1
-URxvt*saveLines: 50000
-URxvt*iso14755: false
-
-URxvt*transparent: true
-URxvt*shading: 15
-
-URxvt*perl-ext: default,matcher
-URxvt*url-launcher: firefox
-URxvt*matcher*button: 1
-
 ! -------- Colors --------
 *background: #000000
 *foreground: #ebdbb2
@@ -47,3 +33,25 @@ URxvt*matcher*button: 1
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
+
+! -------- rofi --------
+rofi.color-enabled: true
+rofi.separator-style: none
+rofi.fullscreen: false
+rofi.width: 50
+rofi.fake-transparency: true
+rofi.hide-scrollbar: true
+rofi.font: DejaVu Sans 10
+rofi.padding: 5
+rofi.bw: 0
+rofi.line-margin: 5
+rofi.monitor: -1
+rofi.matching: fuzzy
+
+!                  bg             border   separator
+rofi.color-window: argb:dd000000, #a89984, #a89984
+
+!                  bg             fg       bg-alt         hl-bg    hl-fg
+rofi.color-normal: argb:00000000, #ebdbb2, argb:00000000, #665c54, #fbf1c7
+rofi.color-urgent: argb:00000000, #e53935, argb:00000000, #665c54, #fbf1c7
+rofi.color-active: argb:00000000, #555555, argb:00000000, #665c54, #fbf1c7
