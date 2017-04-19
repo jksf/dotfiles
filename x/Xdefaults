@@ -49,7 +49,7 @@ rofi.monitor: -1
 rofi.matching: fuzzy
 
 !                  bg             border   separator
-rofi.color-window: argb:dd000000, #a89984, #a89984
+rofi.color-window: argb:dd282828, #a89984, #a89984
 
 !                  bg             fg       bg-alt         hl-bg    hl-fg
 rofi.color-normal: argb:00000000, #ebdbb2, argb:00000000, #665c54, #fbf1c7
