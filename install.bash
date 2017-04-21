@@ -58,8 +58,8 @@ link_prompt "$DIR/bash/keybindings/fzf" "$keybindings_dir/fzf"
 if [[ "$(uname)" == MINGW* ]]; then
     link_prompt "$DIR/mintty/minttyrc" "$HOME/.minttyrc"
 else
-    # screen
-    link_prompt "$DIR/screen/screenrc" "$HOME/.screenrc"
+    # tmux
+    link_prompt "$DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
 
     # X
     link_prompt "$DIR/x/Xdefaults" "$HOME/.Xdefaults"
