@@ -41,7 +41,18 @@ link_prompt "$DIR/vim" "$HOME/.vim"
 link_prompt "$DIR/bash/bashrc" "$HOME/.bashrc"
 link_prompt "$DIR/bash/bash_profile" "$HOME/.bash_profile"
 link_prompt "$DIR/bash/inputrc" "$HOME/.inputrc"
-link_prompt "$DIR/bash/git-completion.bash" "$HOME/.git-completion.bash"
+
+# bash completions
+completions_dir=$HOME/.local/share/bash-completion/completions
+mkdir -p "$completions_dir"
+link_prompt "$DIR/bash/completions/git" "$completions_dir/git"
+link_prompt "$DIR/bash/completions/fzf" "$completions_dir/fzf"
+link_prompt "$DIR/bash/completions/git" "$completions_dir/git"
+
+# bash keybindings
+keybindings_dir=$HOME/.local/share/bash-keybinding/keybindings
+mkdir -p "$keybindings_dir"
+link_prompt "$DIR/bash/keybindings/fzf" "$keybindings_dir/fzf"
 
 # windows
 if [[ "$(uname)" == MINGW* ]]; then
