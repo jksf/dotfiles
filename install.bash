@@ -45,9 +45,7 @@ link_prompt "$DIR/bash/inputrc" "$HOME/.inputrc"
 # bash completions
 completions_dir=$HOME/.local/share/bash-completion/completions
 mkdir -p "$completions_dir"
-link_prompt "$DIR/bash/completions/git" "$completions_dir/git"
 link_prompt "$DIR/bash/completions/fzf" "$completions_dir/fzf"
-link_prompt "$DIR/bash/completions/git" "$completions_dir/git"
 
 # bash keybindings
 keybindings_dir=$HOME/.local/share/bash-keybinding/keybindings

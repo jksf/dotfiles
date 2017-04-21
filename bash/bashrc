@@ -58,35 +58,6 @@ set -o noclobber
 # Turn on recursive globbing (enables ** to recurse all directories)
 shopt -s globstar 2> /dev/null
 
-# ---------- Completion -----------
-
-# Perform file completion in a case insensitive fashion
-bind "set completion-ignore-case on"
-
-# Display matches for ambiguous patterns at first tab press
-bind "set show-all-if-ambiguous on"
-
-# Custom completions
-completions_dir=~/.local/share/bash-completion/completions
-if [ -f $completions_dir/git ]; then
-    source $completions_dir/git
-fi
-
-if [ -f $completions_dir/fzf ]; then
-    source $completions_dir/fzf
-fi
-
-# Custom keybindings
-keybindings_dir=~/.local/share/bash-keybinding/keybindings
-if [ -f $keybindings_dir/fzf ]; then
-    source $keybindings_dir/fzf
-fi
-
-# Bash completion
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    source /etc/bash_completion
-fi
-
 # ----------- History -------------
 
 # Append to the history file, don't overwrite it
@@ -115,3 +86,28 @@ shopt -s autocd 2> /dev/null
 shopt -s dirspell 2> /dev/null
 # Correct spelling errors in arguments supplied to cd
 shopt -s cdspell 2> /dev/null
+
+# ---------- Completion -----------
+
+# Perform file completion in a case insensitive fashion
+bind "set completion-ignore-case on"
+
+# Display matches for ambiguous patterns at first tab press
+bind "set show-all-if-ambiguous on"
+
+# Custom completions
+completions_dir=~/.local/share/bash-completion/completions
+if [ -f $completions_dir/fzf ]; then
+    source $completions_dir/fzf
+fi
+
+# Custom keybindings
+keybindings_dir=~/.local/share/bash-keybinding/keybindings
+if [ -f $keybindings_dir/fzf ]; then
+    source $keybindings_dir/fzf
+fi
+
+# Bash completion
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    source /etc/bash_completion
+fi
