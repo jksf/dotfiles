@@ -46,7 +46,7 @@ rofi.padding: 5
 rofi.bw: 0
 rofi.line-margin: 5
 rofi.monitor: -1
-rofi.matching: fuzzy
+rofi.matching: normal
 
 !                  bg             border   separator
 rofi.color-window: argb:dd282828, #a89984, #a89984
