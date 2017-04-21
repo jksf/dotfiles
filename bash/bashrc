@@ -95,19 +95,26 @@ bind "set completion-ignore-case on"
 # Display matches for ambiguous patterns at first tab press
 bind "set show-all-if-ambiguous on"
 
+# Bash completion
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    source /etc/bash_completion
+fi
+
 # Custom completions
 completions_dir=~/.local/share/bash-completion/completions
 if [ -f $completions_dir/fzf ]; then
     source $completions_dir/fzf
+    export FZF_COMPLETION_TRIGGER='!'
+
+    # Use ag (silver searcher) if available
+    if command -v ag >/dev/null 2>&1; then
+        export FZF_DEFAULT_COMMAND='ag -g ""'
+        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    fi
 fi
 
 # Custom keybindings
 keybindings_dir=~/.local/share/bash-keybinding/keybindings
 if [ -f $keybindings_dir/fzf ]; then
     source $keybindings_dir/fzf
-fi
-
-# Bash completion
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    source /etc/bash_completion
 fi
