@@ -195,7 +195,10 @@ bar {
 }
 
 # Load X resources
-exec --no-startup-id xrdb -merge ~/.Xdefaults
+exec --no-startup-id "xrdb -merge ~/.Xdefaults"
+
+# Set monitor layout and wallpaper
+exec --no-startup-id "monitorlayout && sh ~/.fehbg"
 
 # Start notification daemon
 exec --no-startup-id "dunst"
