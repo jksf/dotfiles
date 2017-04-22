@@ -61,7 +61,6 @@ else
 
     # X
     link_prompt "$DIR/x/Xdefaults" "$HOME/.Xdefaults"
-    link_prompt "$DIR/x/xsessionrc" "$HOME/.xsessionrc"
 
     # X Scripts
     mkdir -p "$HOME/.local/bin"
