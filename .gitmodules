@@ -1,4 +1,4 @@
 [submodule "vim"]
 	path = vim
-	url = git@github.com:jstefanski/dotvim.git
+	url = https://github.com/jstefanski/dotvim.git
 	branch = master
