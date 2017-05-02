@@ -77,6 +77,10 @@ else
     link_prompt "$DIR/x/i3/config" "$HOME/.config/i3/config"
     link_prompt "$DIR/x/i3/i3status.conf" "$HOME/.config/i3/i3status.conf"
 
+    # rofi-pass
+    mkdir -p "$HOME/.config/rofi-pass"
+    link_prompt "$DIR/x/rofi-pass/config" "$HOME/.config/rofi-pass/config"
+
     # dunst
     mkdir -p "$HOME/.config/dunst"
     link_prompt "$DIR/x/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
