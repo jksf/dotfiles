@@ -42,6 +42,7 @@ bindsym $mod+d         exec --no-startup-id rofi -show drun
 bindsym $mod+Control+d exec --no-startup-id rofi -show run
 bindsym $mod+Shift+d   exec --no-startup-id rofi -show ssh
 bindsym $mod+w         exec --no-startup-id rofi -show window
+bindsym $mod+Shift+p   exec --no-startup-id rofi-pass
 
 # change focus
 bindsym $mod+h focus left
