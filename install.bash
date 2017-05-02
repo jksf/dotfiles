@@ -47,6 +47,10 @@ completions_dir=$HOME/.local/share/bash-completion/completions
 mkdir -p "$completions_dir"
 link_prompt "$DIR/bash/completions/fzf" "$completions_dir/fzf"
 
+# gnupg
+mkdir -p "$HOME/.gnupg"
+link_prompt "$DIR/gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
+
 # bash keybindings
 keybindings_dir=$HOME/.local/share/bash-keybinding/keybindings
 mkdir -p "$keybindings_dir"
