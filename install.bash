@@ -58,40 +58,40 @@ link_prompt "$DIR/bash/keybindings/fzf" "$keybindings_dir/fzf"
 
 # windows
 if [[ "$(uname)" == MINGW* ]]; then
-    link_prompt "$DIR/mintty/minttyrc" "$HOME/.minttyrc"
+    link_prompt "$DIR/win32/mintty/minttyrc" "$HOME/.minttyrc"
 else
     # tmux
     link_prompt "$DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
 
     # X
-    link_prompt "$DIR/x/Xdefaults" "$HOME/.Xdefaults"
+    link_prompt "$DIR/x11/Xdefaults" "$HOME/.Xdefaults"
 
     # X Scripts
     mkdir -p "$HOME/.local/bin"
-    link_prompt "$DIR/x/scripts/pixlock" "$HOME/.local/bin/pixlock"
-    link_prompt "$DIR/x/scripts/monitorlayout" "$HOME/.local/bin/monitorlayout"
-    link_prompt "$DIR/x/scripts/ranger-open" "$HOME/.local/bin/ranger-open"
+    link_prompt "$DIR/x11/scripts/pixlock" "$HOME/.local/bin/pixlock"
+    link_prompt "$DIR/x11/scripts/monitorlayout" "$HOME/.local/bin/monitorlayout"
+    link_prompt "$DIR/x11/scripts/ranger-open" "$HOME/.local/bin/ranger-open"
 
     # Images
     mkdir -p "$HOME/Images"
-    link_prompt "$DIR/x/images/lock.png" "$HOME/Images/lock.png"
+    link_prompt "$DIR/x11/images/lock.png" "$HOME/Images/lock.png"
 
     # i3
     mkdir -p "$HOME/.config/i3"
-    link_prompt "$DIR/x/i3/config" "$HOME/.config/i3/config"
-    link_prompt "$DIR/x/i3/i3status.conf" "$HOME/.config/i3/i3status.conf"
+    link_prompt "$DIR/x11/i3/config" "$HOME/.config/i3/config"
+    link_prompt "$DIR/x11/i3/i3status.conf" "$HOME/.config/i3/i3status.conf"
 
     # rofi-pass
     mkdir -p "$HOME/.config/rofi-pass"
-    link_prompt "$DIR/x/rofi-pass/config" "$HOME/.config/rofi-pass/config"
+    link_prompt "$DIR/x11/rofi-pass/config" "$HOME/.config/rofi-pass/config"
 
     # dunst
     mkdir -p "$HOME/.config/dunst"
-    link_prompt "$DIR/x/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
+    link_prompt "$DIR/x11/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
 
     # gtk
-    link_prompt "$DIR/x/gtk/gtkrc-2.0" "$HOME/.gtkrc-2.0"
-    link_prompt "$DIR/x/gtk/gtkrc-3.0" "$HOME/.config/gtk-3.0/settings.ini"
+    link_prompt "$DIR/x11/gtk/gtkrc-2.0" "$HOME/.gtkrc-2.0"
+    link_prompt "$DIR/x11/gtk/gtkrc-3.0" "$HOME/.config/gtk-3.0/settings.ini"
 fi
 
 if [ -n "$NEW" ]; then
