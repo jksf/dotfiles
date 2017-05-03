@@ -55,3 +55,9 @@ rofi.color-window: argb:dd282828, #a89984, #a89984
 rofi.color-normal: argb:00000000, #ebdbb2, argb:00000000, #665c54, #fbf1c7
 rofi.color-urgent: argb:00000000, #e53935, argb:00000000, #665c54, #fbf1c7
 rofi.color-active: argb:00000000, #555555, argb:00000000, #665c54, #fbf1c7
+
+! -------- emacs --------
+Emacs.menuBar: off
+Emacs.toolBar: off
+Emacs.verticalScrollBars: off
+Emacs.font: DejaVu Sans Mono-10
