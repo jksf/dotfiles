@@ -104,7 +104,6 @@ fi
 completions_dir=~/.local/share/bash-completion/completions
 if [ -f $completions_dir/fzf ]; then
     source $completions_dir/fzf
-    export FZF_COMPLETION_TRIGGER='!'
 
     # Use ag (silver searcher) if available
     if command -v ag >/dev/null 2>&1; then
