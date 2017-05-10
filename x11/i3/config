@@ -28,7 +28,7 @@ bindsym $mod+a exec "i3-sensible-terminal -e alsamixer"
 bindsym $mod+z exec "i3-sensible-terminal -e ranger"
 
 # lock
-bindsym Control+$mod+l exec pixlock ~/Images/lock.png
+bindsym Control+$mod+l exec "pixlock ~/Images/lock.png"
 
 # screenshot
 bindsym Print exec --no-startup-id mkdir -p ~/Screenshots && import -window root \
@@ -38,11 +38,12 @@ bindsym Print exec --no-startup-id mkdir -p ~/Screenshots && import -window root
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d         exec --no-startup-id rofi -show drun
-bindsym $mod+Control+d exec --no-startup-id rofi -show run
-bindsym $mod+Shift+d   exec --no-startup-id rofi -show ssh
-bindsym $mod+w         exec --no-startup-id rofi -show window
-bindsym $mod+Shift+p   exec --no-startup-id rofi-pass
+bindsym $mod+d         exec --no-startup-id "rofi -show drun"
+bindsym $mod+Shift+d   exec --no-startup-id "rofi -show drun -run-command 'gksudo {cmd}'"
+bindsym $mod+Control+d exec --no-startup-id "rofi -show run"
+bindsym $mod+Shift+s   exec --no-startup-id "rofi -show ssh"
+bindsym $mod+w         exec --no-startup-id "rofi -show window"
+bindsym $mod+Shift+p   exec --no-startup-id "rofi-pass"
 
 # change focus
 bindsym $mod+h focus left
