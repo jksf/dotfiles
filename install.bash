@@ -66,6 +66,10 @@ else
     # X
     link_prompt "$DIR/x11/Xdefaults" "$HOME/.Xdefaults"
 
+    # Desktop shortcuts
+    mkdir -p "$HOME/.local/share/applications"
+    link_prompt "$DIR/x11/desktop/applications/emacs-client.desktop" "$HOME/.local/share/applications/emacs-client.desktop"
+
     # X Scripts
     mkdir -p "$HOME/.local/bin"
     link_prompt "$DIR/x11/scripts/pixlock" "$HOME/.local/bin/pixlock"
