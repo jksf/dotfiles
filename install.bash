@@ -43,9 +43,8 @@ link_prompt "$DIR/bash/bash_profile" "$HOME/.bash_profile"
 link_prompt "$DIR/bash/inputrc" "$HOME/.inputrc"
 
 # bash completions
-completions_dir=$HOME/.local/share/bash-completion/completions
-mkdir -p "$completions_dir"
-link_prompt "$DIR/bash/completions/fzf" "$completions_dir/fzf"
+link_prompt "$DIR/bash/bash_completion" "$HOME/.bash_completion"
+link_prompt "$DIR/bash/completions" "$HOME/.bash_completion.d"
 
 # gnupg
 mkdir -p "$HOME/.gnupg"

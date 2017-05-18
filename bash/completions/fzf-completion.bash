@@ -234,7 +234,7 @@ _fzf_complete_telnet() {
 _fzf_complete_ssh() {
   _fzf_complete '+m' "$@" < <(
     cat <(cat ~/.ssh/config /etc/ssh/ssh_config 2> /dev/null | command grep -i '^host' | command grep -v '*') \
-        <(command grep -oE '^[a-z0-9.,-]+' ~/.ssh/known_hosts | tr ',' '\n' | awk '{ print $1 " " $1 }') \
+        <(command grep -oE '^[a-z0-9.,:-]+' ~/.ssh/known_hosts | tr ',' '\n' | awk '{ print $1 " " $1 }') \
         <(command grep -v '^\s*\(#\|$\)' /etc/hosts | command grep -Fv '0.0.0.0') |
         awk '{if (length($2) > 0) {print $2}}' | sort -u
   )
@@ -266,9 +266,9 @@ a_cmds="
   awk cat diff diff3
   emacs emacsclient ex file ftp g++ gcc gvim head hg java
   javac ld less more mvim nvim patch perl python ruby
-  sed sftp sort source tail tee uniq vi view vim v wc xdg-open
+  sed sftp sort source tail tee uniq vi view vim wc xdg-open
   basename bunzip2 bzip2 chmod chown curl cp dirname du
-  find git g grep gunzip gzip hg jar
+  find git grep gunzip gzip hg jar
   ln ls mv open rm rsync scp
   svn tar unzip zip"
 x_cmds="kill ssh telnet unset unalias export"
@@ -304,7 +304,7 @@ done
 
 # Directory
 for cmd in $d_cmds; do
-  _fzf_defc "$cmd" _fzf_dir_completion "-o nospace -o plusdirs"
+  _fzf_defc "$cmd" _fzf_dir_completion "-o nospace -o dirnames"
 done
 
 unset _fzf_defc
