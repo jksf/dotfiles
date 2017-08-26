@@ -50,15 +50,15 @@ link_prompt "$DIR/bash/completions" "$HOME/.bash_completion.d"
 mkdir -p "$HOME/.gnupg"
 link_prompt "$DIR/gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
 
-# bash keybindings
-keybindings_dir=$HOME/.local/share/bash-keybinding/keybindings
-mkdir -p "$keybindings_dir"
-link_prompt "$DIR/bash/keybindings/fzf" "$keybindings_dir/fzf"
-
 # windows
 if [[ "$(uname)" == MINGW* ]]; then
     link_prompt "$DIR/win32/mintty/minttyrc" "$HOME/.minttyrc"
 else
+    # bash keybindings
+    keybindings_dir=$HOME/.local/share/bash-keybinding/keybindings
+    mkdir -p "$keybindings_dir"
+    link_prompt "$DIR/bash/keybindings/fzf" "$keybindings_dir/fzf"
+
     # tmux
     link_prompt "$DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
 
