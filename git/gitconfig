@@ -4,12 +4,16 @@
 [user]
     name = Jakub Stefanski
     email = code@jakubstefanski.com
+    signingkey = 672107EEA546A38C5FD8A2BC32E4E8E71C70D865
 
 [color]
     ui = true
     branch = auto
     diff = auto
     status = auto
+
+[commit]
+    gpgsign = true
 
 [push]
     default = upstream
