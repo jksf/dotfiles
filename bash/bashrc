@@ -8,11 +8,12 @@ case $- in
 esac
 
 # ----------- Aliases -------------
-alias g="git"
-alias v="vim"
-alias e="emacsclient -nca ''"
-alias ls="ls --color=auto"
-alias ll="ls -al"
+alias g='git'
+alias v='vim'
+alias vf='vim $(fzf)'
+alias e='emacsclient -nca ""'
+alias ls='ls --color=auto'
+alias ll='ls -al'
 
 # --------- Window Title ----------
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD/$HOME/\~}\007"'
