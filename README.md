@@ -1,6 +1,6 @@
 # dotfiles
 
-My configuration of terminal utilities (bash, vim, git, tmux).
+My development environment configuration.
 
 ## Installation
 
