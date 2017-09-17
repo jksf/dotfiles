@@ -11,7 +11,6 @@ esac
 alias g='git'
 alias v='vim'
 alias vf='vim $(fzf)'
-alias e='emacsclient -nca ""'
 alias ls='ls --color=auto'
 alias ll='ls -al'
 
