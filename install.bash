@@ -86,6 +86,10 @@ else
     # gtk
     link_prompt "$DIR/x11/gtk/gtkrc-2.0" "$HOME/.gtkrc-2.0"
     link_prompt "$DIR/x11/gtk/gtkrc-3.0" "$HOME/.config/gtk-3.0/settings.ini"
+
+    # compton
+    mkdir -p "$HOME/.config/compton"
+    link_prompt "$DIR/x11/compton/compton.conf" "$HOME/.config/compton/compton.conf"
 fi
 
 if [ -n "$NEW" ]; then

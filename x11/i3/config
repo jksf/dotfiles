@@ -205,3 +205,6 @@ exec --no-startup-id "dunst"
 
 # Start /etc/xdg/autostart/ applications
 exec --no-startup-id "dex -ae i3"
+
+# Start composer
+exec --no-startup-id "compton --config ~/.config/compton/compton.conf --logpath /tmp/compton.log"
