@@ -169,9 +169,10 @@ set $color-bg-active     #666666
 set $color-bg-inactive   #222222
 set $color-bg-urgent     #e53935
 set $color-border-active #68a2ff
-set $color-text          #fdf4c1
+set $color-text          #ebdbb2
 set $color-text-inactive #7c6f64
-set $color-bar-bg     #000000
+set $color-bar-text      #ebdbb2
+set $color-bar-bg        #000000
 
 # Layout colors         border                   background               text                 indicator
 client.focused          $color-border-active     $color-border-active     $color-text          $color-border-active
@@ -185,7 +186,7 @@ bar {
     tray_output primary
     separator_symbol "   "
     colors {
-        statusline $color-text
+        statusline $color-bar-text
         background $color-bar-bg
 
         # workspace colors border             background         text
