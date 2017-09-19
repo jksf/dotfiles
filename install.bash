@@ -57,39 +57,42 @@ else
     # tmux
     link_prompt "$DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
 
-    # X
-    link_prompt "$DIR/x11/Xdefaults" "$HOME/.Xdefaults"
+    # X11
+    if ! [ -z "$DISPLAY" ]; then
+        # X
+        link_prompt "$DIR/x11/Xdefaults" "$HOME/.Xdefaults"
 
-    # X Scripts
-    mkdir -p "$HOME/.local/bin"
-    link_prompt "$DIR/x11/scripts/pixlock" "$HOME/.local/bin/pixlock"
-    link_prompt "$DIR/x11/scripts/monitorlayout" "$HOME/.local/bin/monitorlayout"
-    link_prompt "$DIR/x11/scripts/ranger-open" "$HOME/.local/bin/ranger-open"
+        # X Scripts
+        mkdir -p "$HOME/.local/bin"
+        link_prompt "$DIR/x11/scripts/pixlock" "$HOME/.local/bin/pixlock"
+        link_prompt "$DIR/x11/scripts/monitorlayout" "$HOME/.local/bin/monitorlayout"
+        link_prompt "$DIR/x11/scripts/ranger-open" "$HOME/.local/bin/ranger-open"
 
-    # Images
-    mkdir -p "$HOME/Images"
-    link_prompt "$DIR/x11/images/lock.png" "$HOME/Images/lock.png"
+        # Images
+        mkdir -p "$HOME/Images"
+        link_prompt "$DIR/x11/images/lock.png" "$HOME/Images/lock.png"
 
-    # i3
-    mkdir -p "$HOME/.config/i3"
-    link_prompt "$DIR/x11/i3/config" "$HOME/.config/i3/config"
-    link_prompt "$DIR/x11/i3/i3status.conf" "$HOME/.config/i3/i3status.conf"
+        # i3
+        mkdir -p "$HOME/.config/i3"
+        link_prompt "$DIR/x11/i3/config" "$HOME/.config/i3/config"
+        link_prompt "$DIR/x11/i3/i3status.conf" "$HOME/.config/i3/i3status.conf"
 
-    # rofi-pass
-    mkdir -p "$HOME/.config/rofi-pass"
-    link_prompt "$DIR/x11/rofi-pass/config" "$HOME/.config/rofi-pass/config"
+        # rofi-pass
+        mkdir -p "$HOME/.config/rofi-pass"
+        link_prompt "$DIR/x11/rofi-pass/config" "$HOME/.config/rofi-pass/config"
 
-    # dunst
-    mkdir -p "$HOME/.config/dunst"
-    link_prompt "$DIR/x11/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
+        # dunst
+        mkdir -p "$HOME/.config/dunst"
+        link_prompt "$DIR/x11/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
 
-    # gtk
-    link_prompt "$DIR/x11/gtk/gtkrc-2.0" "$HOME/.gtkrc-2.0"
-    link_prompt "$DIR/x11/gtk/gtkrc-3.0" "$HOME/.config/gtk-3.0/settings.ini"
+        # gtk
+        link_prompt "$DIR/x11/gtk/gtkrc-2.0" "$HOME/.gtkrc-2.0"
+        link_prompt "$DIR/x11/gtk/gtkrc-3.0" "$HOME/.config/gtk-3.0/settings.ini"
 
-    # compton
-    mkdir -p "$HOME/.config/compton"
-    link_prompt "$DIR/x11/compton/compton.conf" "$HOME/.config/compton/compton.conf"
+        # compton
+        mkdir -p "$HOME/.config/compton"
+        link_prompt "$DIR/x11/compton/compton.conf" "$HOME/.config/compton/compton.conf"
+    fi
 fi
 
 if [ -n "$NEW" ]; then
