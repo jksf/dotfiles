@@ -87,10 +87,6 @@ else
         mkdir -p "$HOME/.config/rofi-pass"
         link_prompt "$DIR/x11/rofi-pass/config" "$HOME/.config/rofi-pass/config"
 
-        # dunst
-        mkdir -p "$HOME/.config/dunst"
-        link_prompt "$DIR/x11/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
-
         # gtk
         link_prompt "$DIR/x11/gtk/gtkrc-2.0" "$HOME/.gtkrc-2.0"
         link_prompt "$DIR/x11/gtk/gtkrc-3.0" "$HOME/.config/gtk-3.0/settings.ini"
