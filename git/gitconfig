@@ -1,5 +1,6 @@
 [core]
     editor = vim
+    excludesfile = ~/.cvsignore
 
 [user]
     name = Jakub Stefanski

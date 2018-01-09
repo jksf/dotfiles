@@ -37,6 +37,7 @@ link_prompt() {
 
 # git
 link_prompt "$DIR/git/gitconfig" "$HOME/.gitconfig"
+link_prompt "$DIR/git/cvsignore" "$HOME/.cvsignore"
 
 # vim
 link_prompt "$DIR/vim/vimrc" "$HOME/.vimrc"
