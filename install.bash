@@ -35,6 +35,9 @@ link_prompt() {
     fi
 }
 
+# profile
+link_prompt "$DIR/profile" "$HOME/.profile"
+
 # git
 link_prompt "$DIR/git/gitconfig" "$HOME/.gitconfig"
 link_prompt "$DIR/git/cvsignore" "$HOME/.cvsignore"
