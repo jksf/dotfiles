@@ -4,10 +4,7 @@ if [ -d "$HOME/go" ]; then
     export PATH="$GOPATH/bin:$PATH"
 fi
 
-if [ -d "/usr/local/go" ]; then
-    export PATH="/usr/local/go/bin:$PATH"
-    export VGOROOT="/usr/local/go"
-fi
+export GO111MODULE=on
 
 # set up Password Store
 export PASSWORD_STORE_CHARACTER_SET='!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
