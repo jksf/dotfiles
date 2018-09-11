@@ -7,85 +7,66 @@ fi
 
 set -e
 
-SCRIPT=`realpath $0`
-DIR=`dirname $SCRIPT`
-BACKUP_DIR="$HOME/.dotfiles-backup"
-NEW=
-REPLACED=
-SKIPPED=
+dir="$(dirname "$(realpath "$0")")"
+backup_dir="$HOME/.dotfiles-backup"
 
 link_prompt() {
-    if [ $2 -ef $1 ]; then
-        SYMLINKED="$SYMLINKED\n$2"
-    elif [ -e $2 ]; then
+    if [ "$2" -ef "$1" ]; then
+        symlinked+=("$2")
+    elif [ -e "$2" ]; then
         read -r -p "replace ‘$2’? y(es)|b(ackup)|no: "
         if [[ ${REPLY,,} =~ ^y(es)?$ ]]; then
-            rm -rf $2
-            ln -sf $1 $2
-            REPLACED="$REPLACED\n$2"
+            rm -rf "$2"
+            ln -sf "$1" "$2"
+            replaced+=("$2")
         elif [[ ${REPLY,,} =~ ^b(ackup)?$ ]]; then
-            mkdir -p "$BACKUP_DIR"
-            mv $2 "$BACKUP_DIR"
-            ln -sf $1 $2
-            BACKUPED="$BACKUPED\n$2"
+            mkdir -p "${backup_dir}"
+            mv "$2" "${backup_dir}"
+            ln -sf "$1" "$2"
+            backedup+=("$2")
         else
-            SKIPPED="$SKIPPED\n$2"
+            skipped+=("$2")
         fi
     else
-        ln -sf $1 $2
-        NEW="$NEW\n$2"
+        ln -sf "$1" "$2"
+        new+=("$2")
+    fi
+}
+
+print_files() {
+    if [ -n "$2" ]; then
+        echo
+        echo "$1:"
+        for file in "${@:2}"
+        do
+            echo "${file}"
+        done
     fi
 }
 
 # profile
-link_prompt "$DIR/profile" "$HOME/.profile"
+link_prompt "${dir}/profile" "$HOME/.profile"
 
 # gnupg
 mkdir -p "$HOME/.gnupg"
-link_prompt "$DIR/gnupg/gpg.conf" "$HOME/.gnupg/gpg.conf"
-link_prompt "$DIR/gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
+link_prompt "${dir}/gnupg/gpg.conf" "$HOME/.gnupg/gpg.conf"
+link_prompt "${dir}/gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
 
 # git
-link_prompt "$DIR/git/gitconfig" "$HOME/.gitconfig"
-link_prompt "$DIR/git/cvsignore" "$HOME/.cvsignore"
+link_prompt "${dir}/git/gitconfig" "$HOME/.gitconfig"
+link_prompt "${dir}/git/cvsignore" "$HOME/.cvsignore"
 
 # emacs
-link_prompt "$DIR/emacs/spacemacs" "$HOME/.spacemacs"
+link_prompt "${dir}/emacs/spacemacs" "$HOME/.spacemacs"
 
 # fish
 mkdir -p "$HOME/.config/fish"
-link_prompt "$DIR/fish/config.fish" "$HOME/.config/fish/config.fish"
-link_prompt "$DIR/fish/fishfile" "$HOME/.config/fish/fishfile"
+link_prompt "${dir}/fish/config.fish" "$HOME/.config/fish/config.fish"
+link_prompt "${dir}/fish/fishfile" "$HOME/.config/fish/fishfile"
 
 # print summary
-if [ -n "$NEW" ]; then
-    echo
-    echo "New files:"
-    echo -e $NEW
-fi
-
-if [ -n "$REPLACED" ]; then
-    echo
-    echo "Replaced files:"
-    echo -e $REPLACED
-fi
-
-if [ -n "$BACKUPED" ]; then
-    echo
-    echo "Replaced with backup in $BACKUP_DIR:"
-    echo -e $BACKUPED
-fi
-
-if [ -n "$SYMLINKED" ]; then
-    echo
-    echo "Already symlinked files:"
-    echo -e $SYMLINKED
-fi
-
-if [ -n "$SKIPPED" ]; then
-    echo
-    echo "Skipped files:"
-    echo -e $SKIPPED
-fi
-
-echo
+print_files "New" "${new[@]}"
+print_files "Replaced" "${replaced[@]}"
+print_files "Replaced and backed up in ${backup_dir}" "${backedup[@]}"
+print_files "Already symlinked" "${symlinked[@]}"
+print_files "Skipped" "${skipped[@]}"
