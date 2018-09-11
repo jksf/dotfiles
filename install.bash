@@ -38,6 +38,11 @@ link_prompt() {
 # profile
 link_prompt "$DIR/profile" "$HOME/.profile"
 
+# gnupg
+mkdir -p "$HOME/.gnupg"
+link_prompt "$DIR/gnupg/gpg.conf" "$HOME/.gnupg/gpg.conf"
+link_prompt "$DIR/gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
+
 # git
 link_prompt "$DIR/git/gitconfig" "$HOME/.gitconfig"
 link_prompt "$DIR/git/cvsignore" "$HOME/.cvsignore"
@@ -46,7 +51,7 @@ link_prompt "$DIR/git/cvsignore" "$HOME/.cvsignore"
 link_prompt "$DIR/emacs/spacemacs" "$HOME/.spacemacs"
 
 # fish
-mkdir -p "$DIR/fish"
+mkdir -p "$HOME/.config/fish"
 link_prompt "$DIR/fish/config.fish" "$HOME/.config/fish/config.fish"
 link_prompt "$DIR/fish/fishfile" "$HOME/.config/fish/fishfile"
 
