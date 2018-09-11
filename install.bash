@@ -52,17 +52,23 @@ mkdir -p "$HOME/.gnupg"
 link_prompt "${dir}/gnupg/gpg.conf" "$HOME/.gnupg/gpg.conf"
 link_prompt "${dir}/gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
 
-# git
-link_prompt "${dir}/git/gitconfig" "$HOME/.gitconfig"
-link_prompt "${dir}/git/cvsignore" "$HOME/.cvsignore"
-
-# emacs
-link_prompt "${dir}/emacs/spacemacs" "$HOME/.spacemacs"
-
 # fish
 mkdir -p "$HOME/.config/fish"
 link_prompt "${dir}/fish/config.fish" "$HOME/.config/fish/config.fish"
 link_prompt "${dir}/fish/fishfile" "$HOME/.config/fish/fishfile"
+
+# git
+link_prompt "${dir}/git/gitconfig" "$HOME/.gitconfig"
+link_prompt "${dir}/git/cvsignore" "$HOME/.cvsignore"
+
+# vim
+link_prompt "${dir}/vim" "$HOME/.vim"
+link_prompt "${dir}/vim/vimrc" "$HOME/.vimrc"
+link_prompt "${dir}/vim/gvimrc" "$HOME/.gvimrc"
+link_prompt "${dir}/vim/ideavimrc" "$HOME/.ideavimrc"
+
+# emacs
+link_prompt "${dir}/emacs/spacemacs" "$HOME/.spacemacs"
 
 # print summary
 print_files "New" "${new[@]}"

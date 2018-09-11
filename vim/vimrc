@@ -1,0 +1,170 @@
+" -------------------------------------------------------- "
+"  COMMON
+" -------------------------------------------------------- "
+
+set nocompatible
+set encoding=utf8
+set autoread
+set ruler
+set showcmd
+set number
+set laststatus=2
+set backspace=indent,eol,start
+set scrolloff=1
+set sidescrolloff=5
+
+" Disable visual bell
+set noerrorbells visualbell t_vb=
+
+" Disable backup and swap files
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Wrapping
+set textwidth=0
+set nowrap
+set breakat=\ ^I!@*-+;:,./?([
+
+set linebreak
+set showbreak=↪
+set list
+set listchars=tab:▸·,trail:·
+
+" Buffers
+set hidden
+set wildchar=<Tab> wildmenu wildmode=full
+
+" Default Tabs settings
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+set autoindent
+
+" Colors
+syntax enable
+set t_Co=256
+set cursorline
+set background=light
+
+" Undo
+set history=1000
+set undolevels=1000
+
+" Search
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Filetypes
+filetype plugin indent on
+
+" Completion
+set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone
+
+" Status line
+
+" -- clear
+set statusline=
+" -- buffer number
+set statusline +=%2*\ [%n]%*
+" -- full path
+set statusline +=%4*\ %<%F%*
+" -- modified flag
+set statusline +=%3*%m%*
+" -- encoding
+set statusline +=%1*%=\ %{''.(&fenc!=''?&fenc:&enc).''}\ %*
+" -- file format
+set statusline +=%1*%=%{&ff}%*
+" -- file type
+set statusline +=%1*%=%y%*
+" -- current line
+set statusline +=%2*%=%6l%*
+" -- total lines
+set statusline +=%1*/%*%3*%L%*
+" -- virtual column number
+set statusline +=%2*%5v\ %*
+
+hi default link User1 Normal
+hi default link User2 Identifier
+hi default link User3 Special
+hi default link User4 Title
+
+" -------------------------------------------------------- "
+"  EVENTS
+" -------------------------------------------------------- "
+
+" Return to last edit position when opening files
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal! g`\"" |
+            \ endif
+
+" Remember last active buffer
+let g:lastbuf = 1
+au BufLeave * let g:lastbuf = bufnr('%')
+
+" Remember last active tab
+let g:lasttab = 1
+au TabLeave * let g:lasttab = tabpagenr()
+
+" Grep results in cwindow
+autocmd QuickFixCmdPost *grep* cwindow
+
+" -------------------------------------------------------- "
+"  CUSTOM BINDINGS
+" -------------------------------------------------------- "
+
+" Leader bindings
+set notimeout
+let mapleader = " "
+nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <Leader>b :exe "b ".g:lastbuf<CR>
+nnoremap <Leader>n :nohl<CR>
+
+" Easy Motion bindings
+map <Leader>f <Plug>(easymotion-bd-f)
+map <Leader>s <Plug>(easymotion-sn)
+map <Leader>l <Plug>(easymotion-bd-jk)
+map <Leader>w <Plug>(easymotion-bd-w)
+
+" Clang bindings
+nnoremap <Leader>= :!clang-format -i %<CR>
+
+" Tab bindings
+nnoremap <Leader>t :exe "tabn ".g:lasttab<CR>
+
+" netrw
+let g:netrw_liststyle=3
+
+" Colorscheme
+let g:gruvbox_italic=0
+let g:gruvbox_bold=0
+
+" Load plugins
+execute pathogen#infect()
+
+colorscheme gruvbox
+
+" Highlight trailing whitespaces
+highlight TrailingWhitespace ctermbg=red guibg=red
+match TrailingWhitespace /\s\+$/
+
+augroup HighlightTrailingWhitespace
+    autocmd BufEnter * match TrailingWhitespace /\s\+$/
+    autocmd BufWinEnter * match TrailingWhitespace /\s\+$/
+    autocmd WinEnter * match TrailingWhitespace /\s\+$/
+    autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
+    autocmd InsertLeave * match TrailingWhitespace /\s\+$/
+    autocmd WinLeave * call clearmatches()
+    autocmd BufWinLeave * call clearmatches()
+    autocmd BufLeave * call clearmatches()
+augroup END
+
+" Allow transparent background
+hi Normal ctermbg=none
