@@ -15,7 +15,9 @@ REPLACED=
 SKIPPED=
 
 link_prompt() {
-    if [ -e $2 ]; then
+    if [ $2 -ef $1 ]; then
+        SYMLINKED="$SYMLINKED\n$2"
+    elif [ -e $2 ]; then
         read -r -p "replace ‘$2’? y(es)|b(ackup)|no: "
         if [[ ${REPLY,,} =~ ^y(es)?$ ]]; then
             rm -rf $2
@@ -72,6 +74,12 @@ if [ -n "$BACKUPED" ]; then
     echo
     echo "Replaced with backup in $BACKUP_DIR:"
     echo -e $BACKUPED
+fi
+
+if [ -n "$SYMLINKED" ]; then
+    echo
+    echo "Already symlinked files:"
+    echo -e $SYMLINKED
 fi
 
 if [ -n "$SKIPPED" ]; then
