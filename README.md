@@ -14,6 +14,15 @@ Run `./install.bash`. The installation script will prompt before replacing any e
 
 ## Troubleshooting
 
+### Gnome Keyring overriding `SSH_AUTH_SOCK`
+
+Turn off SSH component in `/etc/xdg/autostart/gnome-keyring-ssh.desktop`
+
+```diff
+-Exec=/usr/bin/gnome-keyring-daemon --start --components=ssh
++Exec=/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets
+```
+
 ### Glitches in Spacemacs Powerline
 
 Install `unifont`, for example:

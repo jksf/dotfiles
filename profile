@@ -23,3 +23,8 @@ fi
 if [ -d "$HOME/.local/bin" ]; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
+
+# set up SSH authentication using GPG keys
+export GPG_TTY=$(tty)
+unset SSH_AGENT_PID
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
