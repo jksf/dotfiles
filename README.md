@@ -4,6 +4,12 @@ My development environment configuration.
 
 ## Installation
 
+Fetch git submodules
+
+```
+git submodule update --init --recursive
+```
+
 Run `./install.bash`. The installation script will prompt before replacing any existing files.
 
 ## Troubleshooting
