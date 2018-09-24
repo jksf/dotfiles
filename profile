@@ -12,6 +12,9 @@ export PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS='23456789ABCDEFGHJKLMNPRSTUVWXYZa
 export PASSWORD_STORE_GENERATED_LENGTH=20
 export PASSWORD_STORE_CLIP_TIME=15
 
+# set up gtags
+export GTAGSFORCECPP=
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     if [ -f "$HOME/.bashrc" ]; then
