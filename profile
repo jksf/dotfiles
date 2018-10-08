@@ -4,8 +4,6 @@ if [ -d "$HOME/go" ]; then
     export PATH="$GOPATH/bin:$PATH"
 fi
 
-export GO111MODULE=on
-
 # set up Password Store
 export PASSWORD_STORE_CHARACTER_SET='!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
 export PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS='23456789ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
