@@ -4,6 +4,9 @@ if [ -d "$HOME/go" ]; then
     export PATH="$GOPATH/bin:$PATH"
 fi
 
+# set up .NET Core
+export DOTNET_CLI_TELEMETRY_OPTOUT=true
+
 # set up Password Store
 export PASSWORD_STORE_CHARACTER_SET='!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
 export PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS='23456789ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
